@@ -16,7 +16,7 @@ build/
 # Editor/OS
 .vscode/
 .DS_Store
-thumbs.db
+Thumbs.db
 
 # Optional logs
 npm-debug.log*
