@@ -5,6 +5,9 @@ import { query, queryOne } from "./db.js";
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.get("/", (_req, res) => {
+  res.send("Backend Portal Data Mitra berjalan!");
+});
 
 app.get("/api/metros", async (_req, res) => {
   res.json(await query("SELECT id, name FROM metros ORDER BY name"));
