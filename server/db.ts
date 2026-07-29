@@ -4,7 +4,10 @@ import pg from "pg";
 const { Pool } = pg;
 
 export const pool = new Pool({
-  connectionString: process.env.DATABASE_URL || "postgres://postgres:12345678@localhost:5432/direktori_mitra"
+  connectionString: process.env.DATABASE_URL,
+  ssl: process.env.DATABASE_URL
+    ? { rejectUnauthorized: false }
+    : false,
 });
 
 export async function query(sql: string, params?: any[]) {
