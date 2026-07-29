@@ -103,4 +103,8 @@ app.delete("/api/complaint-groups/:id", async (req, res) => {
   res.json({ ok: true });
 });
 
-app.listen(process.env.PORT || 3001, () => console.log("Server: http://localhost:3001"));
+const PORT = Number(process.env.PORT) || 3001;
+
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`Server berjalan di port ${PORT}`);
+});
